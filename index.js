@@ -81,25 +81,36 @@ if(computerChoice === 'scissors' && userChoiceDisplay === 'paper'){
 if(computerChoice === 'scissors' && userChoiceDisplay === 'rock'){
    playerScore++;
     result = "you win!"
-    
 }
+
  console.log(result)
 
 }
-// //Rounds
-// function game(rounds){
-//     const computerSelection = generatecompChoice();
-//     for(let i=0; i<rounds; i++){
-//         getResult(prompt('Rock, paper, or scissors',computerChoice),computerChoice);
-        
+//validation
+// function valid(){
+//     while(lower !== computerChoice || lower === ""){
+//      console.log("enter correct value")
+//      playerScore--
+//      result = null;
 //     }
-//     if(playerScore>computerScore){
-//         console.log(`You are the winner with a score of ${playerScore}`);
-//     } else if(playerScore<computerScore){
-//         console.log(`You lost, computer won with a score of ${computerScore}`);
-//     }else{
-//         console.log('The game is a tie');
-//     }
-// }
+// } 
 
-// game(5);
+//Rounds
+function game(rounds){
+    for(let i=0; i<=rounds; i++){
+     lower =  prompt('Rock, paper, or scissors')
+       getUserChoice()
+        generatecompChoice()
+        getResult()
+    }
+    if(playerScore>computerScore){
+        console.log(`You are the winner with a score of ${playerScore} out of 5 rounds`);
+    } else if(playerScore<computerScore){
+        console.log(`You lost, computer won with a score of ${computerScore} out of 5 rounds`);
+    }else{
+        console.log('The game is a tie');
+    }
+    
+}
+
+game(3);
